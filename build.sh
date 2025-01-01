@@ -7,13 +7,16 @@ curl -H'Content-Type: application/json' -XPUT "http://localhost:9200/oiwiki" -d'
       "analyzer": {
         "pinyin_analyzer": {
           "tokenizer": "ik_max_word",
-          "filter": "pinyin_filter"
+          "filter": "pinyin_filter",
+		  "char_filter": ["special_mapping"]
         },
         "pinyin_search_analyzer": {
-          "tokenizer": "ik_max_word"
+          "tokenizer": "ik_max_word",
+		  "char_filter": ["special_mapping"]
         },
         "ngram_analyzer": {
-          "tokenizer": "ngram_tokenizer"
+          "tokenizer": "ngram_tokenizer",
+		  "char_filter": ["special_mapping"]
         }
       },
       "filter": {
@@ -30,6 +33,17 @@ curl -H'Content-Type: application/json' -XPUT "http://localhost:9200/oiwiki" -d'
           "min_gram": 1,
           "max_gram": 9,
           "token_chars": ["letter", "digit"]
+        }
+      },
+      "char_filter": {
+        "special_mapping":{
+          "type": "mapping",
+          "mappings": [
+            "@=>.oiwikiAt.",
+            "#=>.oiwikiJin.",
+            "!=>.oiwikiSigh.",
+            "*=>.oiwikiXing."
+          ]
         }
       }
     }
