@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "node api/main.js",
     "webhook": "node webhook/index.js",
-    "test": "node webhook/test.js"
+    "test": "node webhook/test.js",
+    "format": "npx prettier . --write"
   },
   "keywords": [
     "OI",
@@ -24,5 +25,8 @@
     "simple-git": "^3.26.0",
     "strip-markdown-math": "^3.0.3",
     "yaml": "^2.5.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }

@@ -44,4 +44,3 @@ curl -H'Content-Type: application/json' -XPOST "http://localhost:PORT/oiwiki/_de
 }'
 
 ```
-
