@@ -59,7 +59,7 @@ const response = client.search({
           },
           {
             match: {
-              standard_content: {
+              ngram_content: {
                 query: keyword,
                 minimum_should_match: "75%",
                 boost: 2,

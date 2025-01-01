@@ -89,7 +89,7 @@ app.get("/", function (req, res) {
               },
               {
                 match: {
-                  standard_content: {
+                  ngram_content: {
                     query: keyword,
                     minimum_should_match: "75%",
                     boost: 2,

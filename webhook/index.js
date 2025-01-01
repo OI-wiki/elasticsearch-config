@@ -110,7 +110,7 @@ function updateContent(modified, removed) {
       url: "/" + filename.replace("/index.md", "/").replace(".md", "/"),
       h2: h2,
       bold: bold,
-      standard_content: article,
+      ngram_content: article,
     });
   });
   removed.forEach((filename) => {
