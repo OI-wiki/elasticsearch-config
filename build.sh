@@ -31,7 +31,7 @@ curl -H'Content-Type: application/json' -XPUT "http://localhost:9200/oiwiki" -d'
         "ngram_tokenizer": {
           "type": "ngram",
           "min_gram": 1,
-          "max_gram": 9,
+          "max_gram": 2,
           "token_chars": ["letter", "digit"]
         }
       },
